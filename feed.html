@@ -7,6 +7,13 @@
     <title>Account Feed</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        function Pass() {
+            document.querySelector('#profile-1').style.display = 'none';
+            document.querySelector('#profile-2').style.display = 'block';
+        }
+    </script>
 </head>
 <body class="bg-gradient">
     <header class="header">
@@ -30,14 +37,22 @@
             <a href="./chat.html">
                 <button class="btn btn-mid"> Match </button>
             </a>
-            <button class="btn btn-mid"> Pass </button>
+            <button class="btn btn-mid" onclick="Pass()"> Pass </button>
         </div>
 
-        <div class="profile">
+        <div class="profile" id="profile-1">
             <img src="ereshkigal.jpeg" alt="your profile" class="profile-img">
             <div class="profile-info">
                 <div class="profile-name"> Ereshkigal </div>
                 <div class="profile-bio"> A Cute Goddess of Death </div>
+            </div>
+        </div>
+
+        <div class="profile" id="profile-2" style="display: none;">
+            <img src="Mash.Kyrielight.full.2237502.png" alt="your profile" class="profile-img">
+            <div class="profile-info">
+                <div class="profile-name"> Mash Kyrielight </div>
+                <div class="profile-bio"> A Cute Shielder </div>
             </div>
         </div>
     </main>
