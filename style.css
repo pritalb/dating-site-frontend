@@ -9,6 +9,10 @@ body {
     background-image: linear-gradient(to bottom right, #845EC2, #D65DB1, #FF6F91, #FF9671);
 }
 
+.bg-dark {
+    background-color: #262626;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -124,4 +128,31 @@ body {
 
 .profile-bio {
     font-size: 18px;
+}
+
+.chat {
+    display: flex;
+    height: 60%;
+    width: 24vw;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.chat-msg {
+    background-color: #2D2B2B;
+    width: fit-content;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 7px;
+}
+
+.your-msg {
+    align-self: flex-start;
+}
+
+.their-msg {
+    align-self: flex-end;
 }
