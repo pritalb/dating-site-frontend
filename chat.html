@@ -7,13 +7,30 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+    <script>
+        let current_profile = sessionStorage.getItem('current_profile');
+        console.log(current_profile);
+
+        if (current_profile === null) {
+            current_profile = 1;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.their-profile').forEach(profile => {
+                profile.style.display = 'none';
+            })
+
+            document.querySelector(`#profile-${current_profile}`).style.display = 'block';
+        })
+    </script>
 </head>
+
 <body class="bg-dark">
     <header class="header">
         <div class="logo"> Find<span class="logo-accent">'</span>Em </div>
 
         <a href="feed.html">
-            <button class="btn btn-small"> Sign Up </button>
+            <button class="btn btn-small"> Account </button>
         </a>
     </header>
 
@@ -31,11 +48,19 @@
             <div class="their-msg chat-msg"> Hello... </div>
         </div>
 
-        <div class="profile">
+        <div class="profile their-profile" id="profile-1">
             <img src="ereshkigal.jpeg" alt="your profile" class="profile-img">
             <div class="profile-info">
                 <div class="profile-name"> Ereshkigal </div>
                 <div class="profile-bio"> A Cute Goddess of Death </div>
+            </div>
+        </div>
+
+        <div class="profile their-profile" id="profile-2">
+            <img src="Mash.Kyrielight.full.2237502.png" alt="your profile" class="profile-img">
+            <div class="profile-info">
+                <div class="profile-name"> Mash Kyrielight </div>
+                <div class="profile-bio"> A Cute Shielder </div>
             </div>
         </div>
     </main>

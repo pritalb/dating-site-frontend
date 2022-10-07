@@ -9,9 +9,22 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
+        let current_profile = 1;
+        let off_profile = 2;
+
+        sessionStorage.setItem('current_profile', current_profile);
+        sessionStorage.setItem('off_profile', off_profile);
+
         function Pass() {
-            document.querySelector('#profile-1').style.display = 'none';
-            document.querySelector('#profile-2').style.display = 'block';
+            document.querySelector(`#profile-${current_profile}`).style.display = 'none';
+            document.querySelector(`#profile-${off_profile}`).style.display = 'block';
+
+            temp = current_profile;
+            current_profile = off_profile;
+            off_profile = temp;
+
+            sessionStorage.setItem('current_profile', current_profile);
+            sessionStorage.setItem('off_profile', off_profile);
         }
     </script>
 </head>
@@ -20,7 +33,7 @@
         <div class="logo"> Find<span class="logo-accent">'</span>Em </div>
 
         <a href="feed.html">
-            <button class="btn btn-small"> Sign Up </button>
+            <button class="btn btn-small"> Account </button>
         </a>
     </header>
 
@@ -37,7 +50,7 @@
             <a href="./chat.html">
                 <button class="btn btn-mid"> Match </button>
             </a>
-            <button class="btn btn-mid" onclick="Pass()"> Pass </button>
+            <button class="btn btn-mid" onclick="Pass();"> Pass </button>
         </div>
 
         <div class="profile" id="profile-1">
